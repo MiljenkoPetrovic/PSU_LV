@@ -1,5 +1,5 @@
 
-
+#Program radi samo kad unesem putanju
 import re
 string="X-DSPAM-Confidence:"
 fp = input('Enter the file path: ')  
@@ -20,5 +20,4 @@ for line in fhand:
             count=count+1
 
 
-print("Ime datoteke: ", fhand)
 print("Srednja vrijednost: ",suma/count)
