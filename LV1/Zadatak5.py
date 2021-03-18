@@ -1,16 +1,24 @@
-fname = input('Enter the file name: ')  
+
+
+import re
+string="X-DSPAM-Confidence:"
+fp = input('Enter the file path: ')  
 try:
-    fread = fopen.readlines(fname, mode='r+')
+    fhand = open(fp)
 except:
-    print ('File cannot be opened:', fname)
+    print ('File cannot be opened:', fhand)
     exit()
 
+suma=0
+count=0
+for line in fhand:
+    line = line.rstrip()
+    if line.startswith(string):
+            br = re.findall("\d+\.\d+", line)
+            res = list(map(float, br)) 
+            suma+=sum(res)
+            count=count+1
 
 
-
-line='X-DSPAM-Confidence:'
- for line in fread:
-    
-      if x in line:
-
-          print(line)
+print("Ime datoteke: ", fhand)
+print("Srednja vrijednost: ",suma/count)
