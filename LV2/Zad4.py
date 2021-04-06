@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
-import skimage.io
+
 
 
 img = skimage.io.imread('tiger.png', as_gray=True)
